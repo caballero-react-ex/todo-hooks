@@ -17,12 +17,14 @@ function EditTodoForm({task, id, editTodo, toggleEditForm}) {
         resetInput();
         toggleEditForm();
       }}
+      style={{marginLeft: "1rem", width: "75%"}}
     >
       <TextField 
         margin="normal" 
         value={input} 
         onChange={updateInput}
         fullWidth
+        autoFocus
       />
     </form>
    
