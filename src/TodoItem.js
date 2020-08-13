@@ -14,7 +14,7 @@ function TodoItem({task, id, completed, removeTodo, toggleTodo, editTodo}) {
   const [isEditing, toggleIsEditing] = useToggleState(false);
 
   return (
-    <ListItem style={{height: "64px"}}>
+    <ListItem style={{height: "64px"}}  component="div">
       {isEditing ? <EditTodoForm editTodo={editTodo} task={task} id={id} toggleEditForm={toggleIsEditing} /> : 
       <>
       <CheckBox 
