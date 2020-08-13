@@ -7,7 +7,14 @@ function TodoForm({addTodo}) {
   const [input, updateInput, resetInput] = useInputState("");
   return (
     <Paper>
-      <form onSubmit={e => {
+      <form 
+        style={
+          {margin: "1rem 0", 
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          paddingBottom: ".3rem"
+        }}
+        onSubmit={e => {
         e.preventDefault();
         // with if/else
         // if (input != ''){addTodo(input)} else {alert("please, write something to add to the list")}
@@ -22,7 +29,13 @@ function TodoForm({addTodo}) {
 
         resetInput();
       }}>
-      <TextField value={input} onChange={updateInput}></TextField>
+      <TextField 
+        value={input}
+        onChange={updateInput} 
+        margin="normal" 
+        label="Add New Task"
+        fullWidth
+        />
       </form>
     </Paper>
   );
