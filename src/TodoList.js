@@ -8,20 +8,20 @@ import Divider from '@material-ui/core/Divider';
 function TodoList({todos, removeTodo, toggleTodo, editTodo}) {
   return (
     <Paper>
-      <List style={{padding: "0"}}>
+      
         {todos.map((todo, i) => (
-          <>
-          <TodoItem 
-            {...todo} // pass each individual property of todo (id, task, completed)
-            key={todo.id}
-            removeTodo={removeTodo}
-            toggleTodo={toggleTodo}
-            editTodo={editTodo}
-          />
-          {i < todos.length -1 && <Divider />}
-          </>
+          <List key={todo.id}>
+            <TodoItem 
+              {...todo} // pass each individual property of todo (id, task, completed)
+              // key={todo.id}
+              removeTodo={removeTodo}
+              toggleTodo={toggleTodo}
+              editTodo={editTodo}
+            />
+            {i < todos.length -1 && <Divider />}
+          </List>
         ))}
-      </List>
+    
     </Paper>
   );
 }
